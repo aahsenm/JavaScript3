@@ -20,6 +20,40 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <header class="header-container">
+      <div class="header-inside">
+        <h3 class="header-title">HYF Repositories</h3>
+      </div>
+      <div class="menu">
+        <label for="select"></label>
+        <select name="select" id="select-repo">
+          <option>Select an option</option>
+        </select>
+      </div>
+    </header>
+    <main class="content">
+      
+      <section>
+        <div class="repo" id="repository">
+          <p>Repository: </p>
+        </div>
+        <div class="repo" id="description">
+          <p>Description:</p>
+        </div>
+        <div class="repo" id="forks">
+          <p>Forks: </p>
+        </div>
+        <div class="repo" id="updated">
+          <p>Updated: </p>
+        </div>
+      </section>
+
+      <section class="contributors">
+        <div  id="contributors">
+          <p>Contributors: </p>
+        </div>
+      </section>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
