@@ -1,5 +1,7 @@
 'use strict';
  
+//To fix my errors, I talked one of my friend. She helped me to fix the errors.
+
 // written a function to make a HTTP Request with XHR
 function newFriendWithXhr () {
     
@@ -14,34 +16,34 @@ function newFriendWithXhr () {
 
     //to log the received data to the console, written a function with an if statement
     xhr.onload = function() {
-        if(this.status === 200){
-            console.log(this.responseText);
+        if(xhr.status != 200){
+            console.log(xhr.responseText);
+        } else {
+            console.log(xhr.reponseText);
         }
 
         document.getElementById('XHR').innerHTML = this.responseText;
-
+    }
     //to log to the console the error message
     xhr.onerror = function() {
         console.log('There is an error!');
       };
-    }
 }
 newFriendWithXhr ();
 
 //written a function to make a HTTP Request with Axios
 function newFriendWithAxios () {
 
-    //used get request
-    axios.get('https://www.randomuser.me/api');
-    
-    // used then function
-    axios.then( response => {
+    //used get request and then
+    axios
+        .get('https://www.randomuser.me/api')
+        .then( function(response) {
         console.log(response);
-        document.getElementById('axios').innerHTML = JSON.stringify(response);
+        document.getElementById('Axios').innerHTML = JSON.stringify(response);
     })
 
-    //for error used catch function
-    axios.catch(function(error) {
+        //for error used catch function
+        .catch(function(error) {
         console.log(`There is an ${error}`);
       });
 }
