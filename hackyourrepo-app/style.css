@@ -1,3 +1,88 @@
 /* 
   Write here your CSS rules for HackYourRepo!
 */
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  width: 80%;
+  margin: auto;
+}
+
+.header-container{
+  background-color: #00e4ab5e;
+  color: #313030;
+  padding: 5px;
+}
+
+.header-inside{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.menu{
+  display: flex;
+  width: 50%;
+}
+
+.menu select{
+  background-color: #ffffff;
+  border: none;
+  width: 50%;
+}
+
+#select-repo{
+  align-content: center;
+}
+
+.content, .contributors{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #dfe6e9;
+  margin: 5px;
+  padding: 5px;
+  width: calc(70%);
+}
+
+.repo, .contributors{
+  display: flex;
+  align-items: center;
+  background-color: #00e4ab5e;
+  border: 2px solid;
+  border-radius: 5px;
+  font-size: 11px;
+  height: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  body{
+    width: 100%;
+  } 
+
+  .header-title{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1100px) {
+  body{
+    width: 100%;
+  }
+  
+  .header-title, .menu {
+    width: 50%;
+  }
+}
