@@ -1,7 +1,7 @@
 "use strict";
 
 const checkDoubleDigits = number => {
-    const createPromise = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       if (number > 10) {
         resolve('The number is bigger than 10!');
       }
@@ -9,13 +9,13 @@ const checkDoubleDigits = number => {
         reject('Error! The number is smaller than 10...');
       }
     });
-
-    createPromise
-      .then(message => {
-        console.log(message);
-      })
   };
-  
-  checkDoubleDigits(2);
-  checkDoubleDigits(13);
+
+  checkDoubleDigits(2)
+  .then(message => {
+    console.log(message);
+  })
+  .catch(message => {
+    console.log(message);
+  });
   
