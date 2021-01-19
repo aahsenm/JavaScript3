@@ -19,8 +19,8 @@ elOfMenu.classList.add('menu');
 const selectLabel = document.createElement('label');
 selectLabel.for = 'select'; 
 const elOfSelect = document.createElement('select');
-selectEl.name = 'select';
-selectEl.id = 'select-repo'; 
+elOfSelect.name = 'select';
+elOfSelect.id = 'select-repo'; 
 const elOfOption = document.createElement('option');
 elOfOption.innerText = 'Select an option';
 
@@ -101,4 +101,38 @@ elOfMain.appendChild(sectionofCont);
 sectionofCont.appendChild(contDiv);
 contDiv.appendChild(contP);
 
-// I recreate all the html elements using Javascript. I will complete the other parts as soon as possible.
+// Changes implemented
+
+function main() {
+
+  function fetchData(url) {
+    return fetch(url)
+      .then(response => response.json())
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  elOfSelect.addEventListener('click', () => {
+    fetchData(url).then(data => {
+      console.log(data);
+      addRepo(data); 
+    });
+  });
+
+  function addRepo(data) {
+    const repoArray = data;
+    console.log(repoArray);
+
+    for (let i = 0; i < repoArray.length; i++) {
+      const repoName = repoArray[index].name;
+      const repoOption = document.createElement('option');
+      repoOption.innerHTML = `
+            <option value="${i}">${repoName}</option>
+        `;
+      elOfSelect.appendChild(repoOption);
+    }
+  }
+}
+
+main();
