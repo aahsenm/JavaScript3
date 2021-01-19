@@ -27,7 +27,6 @@ function main() {
         .then( (data) => {
             const dataOfPokemon = data.results.map((pokemon) => pokemon.name);
             addPokemonToDom(dataOfPokemon);
-            return fetch("https://pokeapi.co/api/v2/pokemon?limit=151s");
         });
     }
 
@@ -41,7 +40,7 @@ function main() {
     }
 
     chooseAPokemon.addEventListener("change", (e) => {
-        fetch("https://pokeapi.co/api/v2/pokemon/${e.target.value}")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=151/${e.target.value}")
         .then((response) => {
             if (response.ok) {
               return response.json();
